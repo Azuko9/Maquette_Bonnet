@@ -2,6 +2,16 @@
     margin: 0;
 }
 
+body,
+button,
+a,
+div,
+span {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 button {
     border: none;
 }
