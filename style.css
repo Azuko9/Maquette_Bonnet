@@ -12,7 +12,7 @@ body {
     background-image: url(/public/img/house.png);
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: hidden;
+    overflow: clip;
 
 }
 
