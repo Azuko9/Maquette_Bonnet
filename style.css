@@ -12,7 +12,7 @@ body {
     background-image: url(/public/img/house.png);
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: clip;
+    overflow: hidden;
 
 }
 
@@ -68,50 +68,6 @@ body {
     }
 }
 
-@keyframes size-mobile {
-    0% {
-        left: calc(50vw - 100px);
-        top: calc(50vh - 100px);
-        width: 200px;
-        height: 200px;
-        pointer-events: none;
-
-
-    }
-
-
-
-    40% {
-
-        left: calc(50vw - 100px);
-        top: calc(50vh - 100px);
-    }
-
-    60% {
-        left: -30px;
-        top: -30px;
-
-    }
-
-    65% {
-
-        left: calc(50vw - 100px);
-        bottom: -30px;
-        width: 200px;
-        height: 200px;
-
-    }
-
-    100% {
-
-        left: -230px;
-        top: -230px;
-        width: 600px;
-        height: 600px;
-        pointer-events: none;
-    }
-}
-
 header {
     margin: 0;
     transition: all 1s ease-in-out;
@@ -123,10 +79,9 @@ header {
 .header-not-active {
     width: 600px;
     height: 600px;
-
-    left: calc(50vw - 00px);
-    bottom: -30px;
-    animation: size-mobile 3s ease-in-out;
+    left: -230px;
+    top: -230px;
+    animation: size 3s ease-in-out;
 
 }
 
