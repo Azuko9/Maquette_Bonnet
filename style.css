@@ -178,17 +178,17 @@ button:hover {
 
     }
 
-    /* #ongletA:hover~.ongletE:not(:focus) {
+    #ongletA:hover~.ongletE:not(:focus) {
         background-image: url(/public/img/vinyl-full.png);
         rotate: 720deg;
         transition-duration: 2s;
-        width: 600px;
-        height: 600px;
+        width: 200px;
+        height: 200px;
 
 
 
 
-    } */
+    }
 
 }
 
