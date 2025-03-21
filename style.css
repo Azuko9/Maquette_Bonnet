@@ -12,7 +12,7 @@ body {
     background-image: url(/public/img/house.png);
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: clip;
+    overflow: hidden;
 
 }
 
@@ -30,9 +30,13 @@ body {
         top: calc(50vh - 100px);
         width: 200px;
         height: 200px;
+        pointer-events: all;
+
+
+    }
+
+    1% {
         pointer-events: none;
-
-
     }
 
 
@@ -58,17 +62,19 @@ body {
 
     }
 
+    99% {
+        pointer-events: none;
+    }
+
     100% {
 
         left: -230px;
         top: -230px;
         width: 600px;
         height: 600px;
-        pointer-events: none;
+        pointer-events: all;
     }
 }
-
-/* hello */
 
 header {
     margin: 0;
@@ -146,32 +152,34 @@ button:hover {
     background-color: #dbdbdb;
 }
 
+@media (hover: hover) and (pointer: fine) {
+    #ongletA:hover~.backImg {
+        filter: opacity(0);
+        rotate: 360deg;
+        width: 600px;
+        height: 600px;
+        transition-duration: 2s;
+
+    }
+
+    #ongletA:hover~.backImg p {
+        display: none;
+
+    }
+
+    #ongletA:hover~.ongletE:not(:focus) {
+        background-image: url(/public/img/vinyl-full.png);
+        rotate: 720deg;
+        transition-duration: 2s;
+        width: 600px;
+        height: 600px;
 
 
-
-#ongletA:hover~.backImg {
-    filter: opacity(0);
-    rotate: 360deg;
-    width: 600px;
-    height: 600px;
-    transition-duration: 2s;
+    }
 
 }
 
-#ongletA:hover~.backImg p {
-    display: none;
 
-}
-
-#ongletA:hover~.ongletE:not(:focus) {
-    background-image: url(/public/img/vinyl-full.png);
-    rotate: 720deg;
-    transition-duration: 2s;
-    width: 600px;
-    height: 600px;
-
-
-}
 
 
 
