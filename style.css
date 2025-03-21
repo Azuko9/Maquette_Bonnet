@@ -169,6 +169,7 @@ button:hover {
         width: 600px;
         height: 600px;
         transition-duration: 2s;
+        background-color: none;
 
     }
 
@@ -183,6 +184,8 @@ button:hover {
         transition-duration: 2s;
         width: 600px;
         height: 600px;
+
+
 
 
     }
@@ -205,18 +208,94 @@ button:hover {
 }
 
 
+@keyframes focus {
+    0% {
+        display: none;
+    }
+
+    80% {
+        display: none;
+    }
+
+    81% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+
+.ongletB:focus .onglet-focus {
+
+    display: block;
+    animation: 1.5s focus;
+    position: relative;
+
+}
+
+.onglet-focus img {
+    width: 50vw;
+    border-radius: 25px;
+
+}
 
 
 
 
+
+.onglet-focus {
+    font-size: 5em;
+    display: none;
+}
+
+@keyframes zoom {
+    0% {
+        position: absolute;
+        border-radius: 100%;
+        left: -230px;
+        top: -230px;
+        width: 50%;
+        height: 50%;
+
+    }
+
+    100% {
+        position: absolute;
+        border-radius: 100%;
+        left: -230px;
+        top: -230px;
+        width: 500%;
+        height: 500%;
+
+    }
+}
 
 .ongletB:focus {
     z-index: 0;
     position: fixed;
-    top: 0;
-    left: 0;
+    justify-content: center;
+    top: 230px;
+    left: 230px;
     width: 100vw;
     height: 100vh;
+    border-radius: 0;
+    transition-duration: 0.5s;
+    cursor: auto;
+    animation: zoom 1s;
+
+
+}
+
+.ongletC:focus~.ongletB:not(:focus) {
+    animation: zoom 1s alternate-reverse;
+}
+
+.ongletB:focus.ongletB:hover {
+    rotate: none;
 }
 
 .ongletB:focus~.ongletC:not(:focus) {
@@ -316,7 +395,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     backdrop-filter: opacity(0.5);
-
+    padding: 0
 }
 
 
@@ -447,6 +526,8 @@ p {
         bottom: 0;
     }
 }
+
+
 
 footer {
     position: fixed;
