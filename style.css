@@ -178,7 +178,7 @@ button:hover {
 
     }
 
-    #ongletA:hover~.ongletE:not(:focus) {
+    /* #ongletA:hover~.ongletE:not(:focus) {
         background-image: url(/public/img/vinyl-full.png);
         rotate: 720deg;
         transition-duration: 2s;
@@ -188,7 +188,7 @@ button:hover {
 
 
 
-    }
+    } */
 
 }
 
