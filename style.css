@@ -213,8 +213,10 @@ button:hover {
 .ongletB:focus {
     z-index: 0;
     position: fixed;
-    width: 300vw;
-    height: 300vw;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 .ongletB:focus~.ongletC:not(:focus) {
