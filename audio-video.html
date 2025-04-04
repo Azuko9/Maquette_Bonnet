@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script defer="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Document</title>
   </head>
 
-  <body class="flex">
-    <header class="abso flex">
-      <div id="ongletA" class="abso backImg">
+  <body class="cinema-back">
+    <header class="abso flex header-not-active">
+      <button id="ongletA" class="abso backImg">
         <img class="abso logo logo-b" src="/public/img/logo-b.png" alt="" />
         <img
           class="abso logo logo-circle-little"
@@ -22,27 +22,37 @@
           src="/public/img/logo-circle-big.png"
           alt=""
         />
-        <p id="text-logo">Bonnet</p>
-      </div>
+        <p id="text-logo">BONNET</p>
+      </button>
 
-      <div class="abso ongletB backImg">
+      <button class="abso ongletB backImg">
+        <div class="flex onglet-focus">
+          <p>IMAGE & SON</p>
+        </div>
         <p>AUDIO VIDEO</p>
-      </div>
-      <div class="abso ongletC backImg">
+      </button>
+      <button class="abso ongletC backImg">
         <p>WI-FI</p>
-      </div>
-      <div class="abso ongletD backImg">
-        <p>CONF CALL</p>
-      </div>
+      </button>
+      <button class="abso ongletD backImg">
+        <p>VIDEO CONF</p>
+      </button>
 
-      <div class="abso ongletE backImg">
+      <button class="abso ongletE backImg">
+        <div class="flex onglet-focus">
+          <a href=""><p>CINEMA PRIVATE</p></a>
+        </div>
         <p>CINEMA</p>
-      </div>
+      </button>
     </header>
 
-    <!-- <footer>
-      <button></button>
-      <div></div>
-    </footer> -->
+    <footer>
+      <button id="footerbutton"></button>
+      <div>
+        <p>BONNET</p>
+        <p>10 allée Marie Politzer 64200 Biarritz</p>
+        <p>0559417777</p>
+      </div>
+    </footer>
   </body>
 </html>

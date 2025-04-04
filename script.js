@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const btn = document.getElementById("ongletA");
     const header = document.querySelector("header");
-
+    const footerBtn = document.getElementById('footerbutton');
     if (btn && header) { // Vérifie si les éléments existent
         btn.addEventListener("click", function () {
             if (header.classList.contains("header-not-active")) {
@@ -13,19 +13,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 void header.offsetWidth;
                 header.classList.add("header-not-active");
             }
+
+
+
         });
     } else {
         console.error("Bouton ou header non trouvé !");
     }
 
     setTimeout(function () {
-        const footer = document.getElementById("footerbutton");
-        if (footer) {
-            footer.focus();
-            console.log("Footer a reçu le focus !");
-        } else {
-            console.error("Footer non trouvé !");
-        }
+        footerBtn.classList.add('active');
+
     }, 5000); // 5000 ms = 5 secondes
+
+
+    footerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        footerBtn.classList.toggle('active');
+    });
+
+    header.addEventListener('click', () => {
+        footerBtn.classList.remove('active');
+    });
 });
 

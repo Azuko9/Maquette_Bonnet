@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    font-size: 1.1em;
 }
 
 body,
@@ -19,11 +20,20 @@ button {
 body {
     width: 100vw;
     height: 100vh;
-    background-image: url(/public/img/house.png);
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
 
+}
+
+.index-back {
+
+    background-image: url(/public/img/house.png);
+
+}
+
+.cinema-back {
+    background-image: url(/public/img/cinecouv.jpeg);
 }
 
 .flex {
@@ -121,7 +131,8 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    cursor: url(/public/img/vinyl.png), pointer;
+    /* cursor: url(/public/img/vinyl.png), pointer; */
+    cursor: pointer;
 }
 
 
@@ -134,9 +145,11 @@ header {
 
 
 
-button:hover {
-    rotate: 315deg;
+.backing:hover {
+    rotate: -5deg;
+    transform: scale(1.05);
 }
+
 
 
 #ongletA {
@@ -166,8 +179,8 @@ button:hover {
     #ongletA:hover~.backImg {
         filter: opacity(0);
         rotate: 360deg;
-        width: 600px;
-        height: 600px;
+        width: 200px;
+        height: 200px;
         transition-duration: 2s;
         background-color: none;
 
@@ -178,13 +191,13 @@ button:hover {
 
     }
 
-    #ongletA:hover~.ongletE:not(:focus) {
-        background-image: url(/public/img/vinyl-full.png);
+    #ongletA:hover~.ongletE:not(:active) {
+        /* background-image: url(/public/img/vinyl-full.png); */
         rotate: 720deg;
         transition-duration: 2s;
         width: 200px;
         height: 200px;
-
+        z-index: 4;
 
 
 
@@ -204,6 +217,7 @@ button:hover {
     border-radius: 100%;
     background-color: #4a215b;
     transition-duration: 1s;
+    flex-direction: column-reverse;
 
 }
 
@@ -213,17 +227,17 @@ button:hover {
         display: none;
     }
 
-    80% {
+    40% {
         display: none;
     }
 
-    81% {
-        display: block;
+    41% {
+        display: flex;
         opacity: 0;
     }
 
     100% {
-        display: block;
+        display: flex;
         opacity: 1;
     }
 }
@@ -231,9 +245,10 @@ button:hover {
 
 .ongletB:focus .onglet-focus {
 
-    display: block;
+    display: flex;
     animation: 1.5s focus;
     position: relative;
+
 
 }
 
@@ -247,8 +262,9 @@ button:hover {
 
 
 
+
 .onglet-focus {
-    font-size: 5em;
+    font-size: 2em;
     display: none;
 }
 
@@ -260,6 +276,7 @@ button:hover {
         top: -230px;
         width: 50%;
         height: 50%;
+        background-image: none;
 
     }
 
@@ -270,7 +287,7 @@ button:hover {
         top: -230px;
         width: 500%;
         height: 500%;
-
+        background-image: none;
     }
 }
 
@@ -284,8 +301,12 @@ button:hover {
     height: 100vh;
     border-radius: 0;
     transition-duration: 0.5s;
+    background-image: url(/public/img/bonnet.jpg);
+    background-size: cover;
+    background-position: center;
     cursor: auto;
     animation: zoom 1s;
+    display: block;
 
 
 }
@@ -296,6 +317,7 @@ button:hover {
 
 .ongletB:focus.ongletB:hover {
     rotate: none;
+    scale: none;
 }
 
 .ongletB:focus~.ongletC:not(:focus) {
@@ -380,12 +402,34 @@ button:hover {
 .ongletE:focus {
     z-index: 0;
     position: fixed;
-    width: 300vw;
-    height: 300vw;
-    background-image: none;
+    justify-content: center;
+    top: 230px;
+    left: 230px;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    transition-duration: 0.5s;
+    background-image: url(/public/img/cinecouv.jpeg);
+    background-size: cover;
+    background-position: center;
+    cursor: auto;
+    animation: zoom 1s;
+    display: block;
 }
 
+.ongletE:focus.ongletE:hover {
+    rotate: none;
+    scale: 1;
+}
 
+.ongletE:focus .onglet-focus {
+
+    display: flex;
+    animation: 5s focus;
+    position: relative;
+
+
+}
 
 
 
@@ -493,8 +537,8 @@ button:hover {
 }
 
 #text-logo {
-    top: 135px;
-    font-size: 30px;
+    top: 140px;
+    font-size: 25px;
     z-index: 7;
     color: rgba(0, 0, 0, 0);
     animation: 5s color;
@@ -503,7 +547,7 @@ button:hover {
 
 
 
-p {
+.backImg P {
     color: #ffffff;
     font-family: monospace;
     position: absolute;
@@ -542,22 +586,26 @@ footer {
 
 #footerbutton {
     position: relative;
-    top: 0;
     width: 50px;
     height: 30px;
     border-radius: 25px 25px 0 0;
     background-color: #ffffff;
     padding: 0;
+    top: 90px;
     transition-duration: 1s;
+    cursor: pointer;
 }
 
 
 
 footer div {
+    position: relative;
     width: 100%;
-    height: 2px;
+    top: 90px;
+    padding-left: 20px;
     background-color: #ffffff;
     transition: 1s;
+    transition-duration: 1s;
 
 }
 
@@ -565,14 +613,20 @@ footer div {
     rotate: none;
 }
 
-#footerbutton:focus {
-    top: 32px;
-    z-index: 0;
+#footerbutton.active {
+
+    z-index: 2;
+    background-color: chocolate;
+    transform: rotateX(180deg);
+    top: 30px;
+
+
 
 
 }
 
-#footerbutton:focus~div {
-    height: 100px;
+#footerbutton.active~div {
+    top: 0px;
+    padding-top: 30px;
     z-index: 1;
 }
